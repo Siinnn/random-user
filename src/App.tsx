@@ -1,6 +1,6 @@
 import React from 'react';
 import PersonList from './components/PersonList'; 
-
+import {} from './App.css'
 const App: React.FC = () => {
   return (
     <div>
