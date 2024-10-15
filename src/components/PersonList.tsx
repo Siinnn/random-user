@@ -29,29 +29,31 @@ const RandomUser = () => {
   };
 
   return (
-    <>
+    <div className="grid-container">
       {persons.map((person, index) => (
-        <div key={index}>
-          <img src={person.picture.large} alt="User" />
-          <p>
-            {person.name.title} {person.name.first} {person.name.last}
-            <br />
-            {person.email}
-          </p>
-          <button onClick={() => handleExpand(index)}>
-            {expandedUsers.includes(index) ? "-" : "+"}
-          </button>
-          {expandedUsers.includes(index) && (
-            <div>
-              <p>Adresse : {person.location.street.number} {person.location.street.name}</p>
-              <p>Ville : {person.location.city}</p>
-              <p>Pays : {person.location.country}</p>
-              <p>Téléphone : {person.phone}</p>
-            </div>
-          )}
+        <div key={index} className="card">
+          <img src={person.picture.large} alt="User" className="image" />
+          <div className="user-info">
+            <p>
+              {person.name.title} {person.name.first} {person.name.last}
+              <br />
+              {person.email}
+            </p>
+            <button onClick={() => handleExpand(index)} className="button">
+              {expandedUsers.includes(index) ? "-" : "+"}
+            </button>
+            {expandedUsers.includes(index) && (
+              <div className="additional-info">
+                <p>Adresse : {person.location.street.number} {person.location.street.name}</p>
+                <p>Ville : {person.location.city}</p>
+                <p>Pays : {person.location.country}</p>
+                <p>Téléphone : {person.phone}</p>
+              </div>
+            )}
+          </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

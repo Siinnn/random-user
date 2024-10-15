@@ -4,7 +4,7 @@ import {} from './App.css'
 const App: React.FC = () => {
   return (
     <div>
-      <h1>Liste des personnes</h1>
+      <h1>Liste des utilisateurs</h1>
       <PersonList />
     </div>
   );
